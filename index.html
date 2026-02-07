@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex Design - Premium Graphic Solutions</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notifications.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">VERTEX</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Interactive Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">VERTEX</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span>&#9776;</span>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper for Sticky Footer -->
+    <main style="flex: 1; width: 100%;">
+
+        <!-- Hero Section -->
+        <section class="hero hidden" style="position: relative; overflow: hidden;">
+            <!-- Floating Decorative Elements -->
+            <div
+                style="position: absolute; top: 10%; right: 10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(108,92,231,0.15), transparent); border-radius: 50%; filter: blur(60px); animation: float 6s ease-in-out infinite;">
+            </div>
+            <div
+                style="position: absolute; bottom: 20%; left: 5%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(0,206,201,0.15), transparent); border-radius: 50%; filter: blur(60px); animation: float 8s ease-in-out infinite reverse;">
+            </div>
+
+            <div class="hero-content" style="position: relative; z-index: 2;">
+                <!-- Trust Badge -->
+                <div
+                    style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; padding: 8px 20px; margin-bottom: 30px;">
+                    <i class="fas fa-check-circle" style="color: var(--accent-color); font-size: 1rem;"></i>
+                    <span style="font-size: 0.9rem; color: #dfe6e9; font-weight: 600;">Trusted by 500+ Brands
+                        Worldwide</span>
+                </div>
+
+                <h1 style="font-size: 4.5rem; line-height: 1.1; margin-bottom: 20px;">We Craft <br>
+                    <span class="gradient-text"
+                        style="background: linear-gradient(to right, #6c5ce7, #00cec9, #fd79a8); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 20px rgba(108, 92, 231, 0.3));">Digital
+                        Masterpieces</span>
+                </h1>
+                <p style="font-size: 1.5rem; color: #dfe6e9; margin-bottom: 30px; max-width: 600px;">
+                    Specializing in <span id="typewriter"
+                        style="color:var(--accent-color); font-weight:bold; text-shadow: 0 0 10px rgba(0,206,201,0.5);"></span><span
+                        class="cursor">|</span>
+                </p>
+                <p style="color: #b2bec3; margin-bottom: 40px; max-width: 600px; font-size: 1.1rem; line-height: 1.8;">A
+                    premium graphic design agency
+                    transforming ideas into visual reality. Elevate your brand with our cutting-edge designs.</p>
+
+                <div class="cta-group" style="margin-bottom: 50px;">
+                    <a href="portfolio.html" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">View
+                        Portfolio</a>
+                    <a href="contact.html" class="btn btn-outline" style="padding: 15px 40px; font-size: 1.1rem;">Start
+                        a Project</a>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            @keyframes float {
+
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+        </style>
+
+        <!-- Stats Section (New) -->
+        <section class="stats-section glass-panel"
+            style="margin: -80px auto 80px; width: 85%; max-width: 1200px; display: flex; justify-content: space-around; padding: 50px; position: relative; z-index: 10; backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+            <div class="stat-item" style="text-align: center;">
+                <h2 id="counter-projects" class="counter" data-target="150"
+                    style="color: var(--accent-color); font-size: 3.5rem; margin: 0; text-shadow: 0 0 20px rgba(0,206,201,0.4); font-family: 'Courier New', monospace; min-width: 120px; display: inline-block;">
+                    0
+                </h2>
+                <p
+                    style="color: #cbd5e0; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-top: 10px;">
+                    Projects Done</p>
+            </div>
+            <div class="stat-item" style="text-align: center;">
+                <h2 id="counter-satisfaction" class="counter" data-target="98"
+                    style="color: var(--primary-color); font-size: 3.5rem; margin: 0; text-shadow: 0 0 20px rgba(108,92,231,0.4); font-family: 'Courier New', monospace; min-width: 120px; display: inline-block;">
+                    0
+                </h2>
+                <p
+                    style="color: #cbd5e0; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-top: 10px;">
+                    Satisfaction %</p>
+            </div>
+            <div class="stat-item" style="text-align: center;">
+                <h2 id="counter-awards" class="counter" data-target="12"
+                    style="color: #fd79a8; font-size: 3.5rem; margin: 0; text-shadow: 0 0 20px rgba(253,121,168,0.4); font-family: 'Courier New', monospace; min-width: 120px; display: inline-block;">
+                    0
+                </h2>
+                <p
+                    style="color: #cbd5e0; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-top: 10px;">
+                    Design Awards</p>
+            </div>
+            <div class="stat-item" style="text-align: center;">
+                <h2 id="counter-experience" class="counter" data-target="5"
+                    style="color: #00cec9; font-size: 3.5rem; margin: 0; text-shadow: 0 0 20px rgba(0,206,201,0.4); font-family: 'Courier New', monospace; min-width: 120px; display: inline-block;">
+                    0
+                </h2>
+                <p
+                    style="color: #cbd5e0; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-top: 10px;">
+                    Years Experience</p>
+            </div>
+        </section>
+
+        <style>
+            .project-card-img {
+                transition: transform 0.5s ease;
+            }
+
+            .glass-panel:hover .project-card-img {
+                transform: scale(1.1);
+            }
+
+            .service-item {
+                transition: all 0.3s ease;
+            }
+
+            .service-item:hover {
+                transform: translateY(-10px);
+                background: rgba(255, 255, 255, 0.1);
+            }
+        </style>
+
+        <!-- Services Teaser (Highlights) -->
+        <section class="services section hidden">
+            <h2 class="section-title">Our Expertise</h2>
+            <div class="services-grid">
+                <div class="glass-panel service-item hidden delay-100" style="padding: 40px;">
+                    <i class="fas fa-gem"
+                        style="font-size: 3rem; color: var(--accent-color); margin-bottom: 25px; filter: drop-shadow(0 0 10px rgba(0,206,201,0.5));"></i>
+                    <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Branding</h3>
+                    <p style="color: #b2bec3;">We create identity systems that speak volumes. From logo design to full
+                        brand guidelines, we ensure your brand stands out.</p>
+                </div>
+                <div class="glass-panel service-item hidden delay-200" style="padding: 40px;">
+                    <i class="fas fa-layer-group"
+                        style="font-size: 3rem; color: var(--primary-color); margin-bottom: 25px; filter: drop-shadow(0 0 10px rgba(108,92,231,0.5));"></i>
+                    <h3 style="margin-bottom: 15px; font-size: 1.5rem;">UI/UX Design</h3>
+                    <p style="color: #b2bec3;">Designing seamless digital experiences. We focus on user-centric
+                        interfaces that are beautiful and intuitive.</p>
+                </div>
+                <div class="glass-panel service-item hidden delay-300" style="padding: 40px;">
+                    <i class="fas fa-film"
+                        style="font-size: 3rem; color: #fd79a8; margin-bottom: 25px; filter: drop-shadow(0 0 10px rgba(253,121,168,0.5));"></i>
+                    <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Motion Graphics</h3>
+                    <p style="color: #b2bec3;">Bringing visuals to life. Animation adds a layer of depth and engagement
+                        that static images simply cannot match.</p>
+                </div>
+            </div>
+
+            <!-- Tools We Master (New) -->
+            <div class="glass-panel hidden delay-300" style="margin-top: 60px; padding: 40px;">
+                <h3
+                    style="text-align: center; margin-bottom: 30px; font-size: 1.2rem; color: #dfe6e9; text-transform: uppercase; letter-spacing: 2px;">
+                    Tools We Master</h3>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.8;">
+                    <i class="fab fa-figma" title="Figma"
+                        style="font-size: 2.5rem; transition: transform 0.3s; color: white;"></i>
+                    <i class="fab fa-react" title="React"
+                        style="font-size: 2.5rem; transition: transform 0.3s; color: #61dafb;"></i>
+                    <i class="fab fa-js" title="JavaScript"
+                        style="font-size: 2.5rem; transition: transform 0.3s; color: #f7df1e;"></i>
+                    <i class="fab fa-html5" title="HTML5"
+                        style="font-size: 2.5rem; transition: transform 0.3s; color: #e34c26;"></i>
+                    <i class="fab fa-css3-alt" title="CSS3"
+                        style="font-size: 2.5rem; transition: transform 0.3s; color: #264de4;"></i>
+                    <i class="fas fa-video" title="After Effects"
+                        style="font-size: 2.5rem; transition: transform 0.3s; color: #999;"></i>
+                    <i class="fas fa-bezier-curve" title="Illustrator"
+                        style="font-size: 2.5rem; transition: transform 0.3s; color: #ff9f43;"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Works Section -->
+        <section class="section hidden">
+            <h2 class="section-title">Featured Works</h2>
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+
+                <!-- Project 1 -->
+                <div class="glass-panel hidden delay-100" style="padding: 0; overflow: hidden; cursor: pointer;">
+                    <div class="project-card-img"
+                        style="height: 250px; background: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;">
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin-bottom: 10px; font-size: 1.5rem;">FinTech Dashboard</h3>
+                        <p style="color: #b2bec3; font-size: 1rem; margin-bottom: 25px; line-height: 1.6;">A
+                            comprehensive financial analytics platform aimed at streamlining data visualization.</p>
+                        <span
+                            style="color: var(--accent-color); font-weight: 700; letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase;">View
+                            Case Study &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-panel hidden delay-200" style="padding: 0; overflow: hidden; cursor: pointer;">
+                    <div class="project-card-img"
+                        style="height: 250px; background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;">
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin-bottom: 10px; font-size: 1.5rem;">E-Commerce Redesign</h3>
+                        <p style="color: #b2bec3; font-size: 1rem; margin-bottom: 25px; line-height: 1.6;">Modernizing
+                            the shopping experience for a leading fashion retailer with AR try-on.</p>
+                        <span
+                            style="color: var(--primary-color); font-weight: 700; letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase;">View
+                            Case Study &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-panel hidden delay-300" style="padding: 0; overflow: hidden; cursor: pointer;">
+                    <div class="project-card-img"
+                        style="height: 250px; background: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;">
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="margin-bottom: 10px; font-size: 1.5rem;">Smart Home App</h3>
+                        <p style="color: #b2bec3; font-size: 1rem; margin-bottom: 25px; line-height: 1.6;">IoT interface
+                            design that connects users to their homes with a single tap.</p>
+                        <span
+                            style="color: #fd79a8; font-weight: 700; letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase;">View
+                            Case Study &rarr;</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Our Process Section -->
+            <section class="section hidden">
+                <h2 class="section-title">Values & Process</h2>
+                <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <!-- Step 1 -->
+                    <div class="glass-panel hidden delay-100" style="padding: 0; overflow: hidden; position: relative;">
+                        <div
+                            style="height: 180px; background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                        </div>
+                        <div
+                            style="position: absolute; top: 15px; left: 15px; background: var(--accent-color); color: #000; font-weight: bold; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                            01</div>
+                        <div style="padding: 30px;">
+                            <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Discovery</h3>
+                            <p style="color: #b2bec3; line-height: 1.6;">We dive deep into your brand, understanding
+                                your goals, audience, and market position.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="glass-panel hidden delay-200" style="padding: 0; overflow: hidden; position: relative;">
+                        <div
+                            style="height: 180px; background: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                        </div>
+                        <div
+                            style="position: absolute; top: 15px; left: 15px; background: var(--primary-color); color: #fff; font-weight: bold; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                            02</div>
+                        <div style="padding: 30px;">
+                            <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Design</h3>
+                            <p style="color: #b2bec3; line-height: 1.6;">Our creative team sketches, prototypes, and
+                                refines concepts to craft the perfect visual solution.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="glass-panel hidden delay-300" style="padding: 0; overflow: hidden; position: relative;">
+                        <div
+                            style="height: 180px; background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80') center/cover no-repeat;">
+                        </div>
+                        <div
+                            style="position: absolute; top: 15px; left: 15px; background: #fd79a8; color: #fff; font-weight: bold; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                            03</div>
+                        <div style="padding: 30px;">
+                            <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Delivery</h3>
+                            <p style="color: #b2bec3; line-height: 1.6;">We polish every pixel and deliver high-quality
+                                assets ready for the world to see.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="section hidden">
+                <h2 class="section-title">Client Stories</h2>
+
+                <div class="testimonial-carousel" style="position: relative; max-width: 800px; margin: 0 auto;">
+                    <button class="carousel-btn prev"
+                        style="position: absolute; left: -50px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: white; font-size: 2rem; cursor: pointer; z-index: 10;">&lt;</button>
+                    <button class="carousel-btn next"
+                        style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: white; font-size: 2rem; cursor: pointer; z-index: 10;">&gt;</button>
+
+                    <div class="testimonial-track-container" style="overflow: hidden; border-radius: 20px;">
+                        <ul class="testimonial-track"
+                            style="display: flex; padding: 0; margin: 0; transition: transform 0.5s ease-in-out;">
+
+                            <!-- Review 1 -->
+                            <li class="testimonial-slide glass-panel"
+                                style="min-width: 100%; box-sizing: border-box; padding: 40px; text-align: center; list-style: none;">
+                                <img src="https://i.pravatar.cc/150?img=32" alt="Client 1"
+                                    style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 20px; border: 3px solid var(--accent-color);">
+                                <div style="color: #fdcb6e; margin-bottom: 15px;">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p
+                                    style="font-size: 1.1rem; line-height: 1.6; font-style: italic; margin-bottom: 20px; color: #dfe6e9;">
+                                    "Vertex Design transformed our outdated brand into something truly spectacular. The
+                                    attention to detail is unmatched and the process was seamless."</p>
+                                <h4 style="color: var(--primary-color);">Sarah Jenkins</h4>
+                                <small style="color: #aaa;">CEO, TechFlow</small>
+                            </li>
+
+                            <!-- Review 2 -->
+                            <li class="testimonial-slide glass-panel"
+                                style="min-width: 100%; box-sizing: border-box; padding: 40px; text-align: center; list-style: none;">
+                                <img src="https://i.pravatar.cc/150?img=11" alt="Client 2"
+                                    style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 20px; border: 3px solid var(--primary-color);">
+                                <div style="color: #fdcb6e; margin-bottom: 15px;">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p
+                                    style="font-size: 1.1rem; line-height: 1.6; font-style: italic; margin-bottom: 20px; color: #dfe6e9;">
+                                    "They just 'get' it. Minimal direction was needed, and the results blew us away.
+                                    Highly recommended for any serious business."</p>
+                                <h4 style="color: var(--accent-color);">David Chen</h4>
+                                <small style="color: #aaa;">Founder, StartUp Inc.</small>
+                            </li>
+
+                            <!-- Review 3 -->
+                            <li class="testimonial-slide glass-panel"
+                                style="min-width: 100%; box-sizing: border-box; padding: 40px; text-align: center; list-style: none;">
+                                <img src="https://i.pravatar.cc/150?img=5" alt="Client 3"
+                                    style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 20px; border: 3px solid #fd79a8;">
+                                <div style="color: #fdcb6e; margin-bottom: 15px;">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p
+                                    style="font-size: 1.1rem; line-height: 1.6; font-style: italic; margin-bottom: 20px; color: #dfe6e9;">
+                                    "Exceptional quality and speed. The team went above and beyond to ensure our launch
+                                    was a success. Will definitely work with them again."</p>
+                                <h4 style="color: #fd79a8;">Emily Ross</h4>
+                                <small style="color: #aaa;">Marketing Director, GlobaCorp</small>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="carousel-nav" style="text-align: center; margin-top: 20px;">
+                        <button class="carousel-indicator current-slide"
+                            style="width: 10px; height: 10px; border-radius: 50%; border: none; background: var(--accent-color); margin: 0 5px; cursor: pointer;"></button>
+                        <button class="carousel-indicator"
+                            style="width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.3); margin: 0 5px; cursor: pointer;"></button>
+                        <button class="carousel-indicator"
+                            style="width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(255,255,255,0.3); margin: 0 5px; cursor: pointer;"></button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Call to Action Section -->
+            <section class="section hidden">
+                <div class="glass-panel cta-section">
+                    <h2>Ready to Elevate Your Brand?</h2>
+                    <p style="margin-bottom: 30px; font-size: 1.2rem; color: rgba(255,255,255,0.8);">Let's create
+                        something
+                        extraordinary together.</p>
+                    <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+                </div>
+            </section>
+
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer
+        style="text-align: center; padding: 40px 20px; color: rgba(255,255,255,0.4); font-size: 0.9rem; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.05); background: var(--bg-color);">
+
+        <!-- Social Icons -->
+        <div class="social-links" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 25px;">
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-linkedin-in"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-dribbble"></i></a>
+        </div>
+
+        <p>&copy; 2024 Vertex Design Agency. All Rights Reserved. <br> <span style="font-size: 0.8rem;">Trademarks
+                belong to their respective owners.</span></p>
+    </footer>
+
+    <script src="js/background.js"></script>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

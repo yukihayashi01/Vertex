@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Vertex Design</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <style>
+        .admin-container {
+            padding-top: 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .dashboard-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-cols {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #1a1a2e;
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Background -->
+    <canvas id="bg-canvas" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1;"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar" style="background: rgba(5,5,16,0.9);">
+        <div class="logo">VERTEX <span style="font-size:0.8rem; color:var(--accent-color);">ADMIN</span></div>
+        <div style="display:flex; align-items:center;">
+
+            <!-- Admin Profile Dropdown -->
+            <div class="nav-profile-container" style="position: relative;">
+                <div class="nav-profile-btn" style="cursor: pointer; display: flex; align-items: center; gap: 10px;">
+                    <img id="admin-avatar" class="admin-nav-avatar"
+                        src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+                </div>
+
+                <div class="profile-dropdown" style="top: 50px; right: 0; z-index: 9999;">
+                    <a href="edit-profile.html">
+                        <span>✏️</span> Edit Profile
+                    </a>
+                    <div class="profile-dropdown-divider"></div>
+                    <a href="#" id="admin-logout">
+                        <span>🚪</span> Logout
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="admin-container" style="flex: 1;">
+        <h2 class="section-title" style="margin-bottom: 30px; text-align: left;">Admin Console</h2>
+
+        <!-- Site Stats Editor -->
+        <div class="glass-panel"
+            style="padding: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <h3 style="margin-bottom: 20px; width: 100%;">Site Statistics</h3>
+            <form id="site-stats-form"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; width: 100%;">
+
+                <div class="form-group">
+                    <label style="font-size:0.8rem; color:#aaa; margin-bottom: 5px; display: block;">Projects
+                        Done</label>
+                    <input type="number" id="stat-projects" value="0"
+                        style="width:100%; padding:10px; background:rgba(0,0,0,0.3); border:1px solid var(--glass-border); color:white; border-radius:8px; font-size: 1.1rem;">
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size:0.8rem; color:#aaa; margin-bottom: 5px; display: block;">Satisfaction
+                        %</label>
+                    <input type="number" id="stat-satisfaction" value="0"
+                        style="width:100%; padding:10px; background:rgba(0,0,0,0.3); border:1px solid var(--glass-border); color:white; border-radius:8px; font-size: 1.1rem;">
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size:0.8rem; color:#aaa; margin-bottom: 5px; display: block;">Awards</label>
+                    <input type="number" id="stat-awards" value="0"
+                        style="width:100%; padding:10px; background:rgba(0,0,0,0.3); border:1px solid var(--glass-border); color:white; border-radius:8px; font-size: 1.1rem;">
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size:0.8rem; color:#aaa; margin-bottom: 5px; display: block;">Years Exp.</label>
+                    <input type="number" id="stat-experience" value="0"
+                        style="width:100%; padding:10px; background:rgba(0,0,0,0.3); border:1px solid var(--glass-border); color:white; border-radius:8px; font-size: 1.1rem;">
+                </div>
+
+                <div class="form-group" style="display: flex; align-items: flex-end;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px;">Update
+                        Stats</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="dashboard-cols">
+            <!-- Users Column -->
+            <div class="col">
+                <h3 style="margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+                    Registered Users</h3>
+                <div id="user-list">
+                    <!-- Dynamic User List -->
+                    <div style="text-align:center; padding: 20px;">Loading users...</div>
+                </div>
+            </div>
+
+            <!-- Projects Column -->
+            <div class="col">
+                <div
+                    style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+                    <h3 style="margin:0;">Active Projects</h3>
+                    <button id="open-create-project-btn" class="btn btn-primary btn-sm">New Project</button>
+                </div>
+                <div id="project-list">
+                    <!-- Dynamic Project List -->
+                    <div style="text-align:center; padding: 20px;">Loading projects...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close-modal">&times;</span>
+            <h3 style="margin-bottom: 20px;">Create New Project</h3>
+            <form id="create-project-form">
+
+                <!-- Client Select -->
+                <div class="form-group">
+                    <label style="display:block; margin-bottom:5px;">Select Client (User)</label>
+                    <select id="project-client" class="modal-select" required>
+                        <option value="">Loading Clients...</option>
+                    </select>
+                </div>
+
+                <!-- Employee Select -->
+                <div class="form-group">
+                    <label style="display:block; margin-bottom:5px;">Assign Employee</label>
+                    <select id="project-employee" class="modal-select" required>
+                        <option value="">Loading Employees...</option>
+                    </select>
+                </div>
+
+                <style>
+                    .modal-select {
+                        width: 100%;
+                        padding: 10px;
+                        background: rgba(0, 0, 0, 0.3);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        color: white;
+                        border-radius: 8px;
+                        margin-bottom: 10px;
+                    }
+
+                    .modal-select option {
+                        background: #1a1a2e;
+                        color: white;
+                    }
+                </style>
+
+                <div class="form-group">
+                    <label style="display:block; margin-bottom:5px;">Project Title</label>
+                    <input type="text" id="project-title" required placeholder="e.g. Logo Design">
+                </div>
+                <div class="form-group">
+                    <label style="display:block; margin-bottom:5px;">Description</label>
+                    <textarea id="project-desc" rows="3" placeholder="Project details..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label style="display:block; margin-bottom:5px;">Status</label>
+                    <select id="project-status"
+                        style="width:100%; padding: 10px; background: rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px;">
+                        <option value="Just Started">Just Started</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Under Review">Under Review</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Create Project</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/background.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer
+        style="text-align: center; padding: 40px 20px; color: rgba(255,255,255,0.4); font-size: 0.9rem; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.05); background: var(--bg-color);">
+
+        <!-- Social Icons -->
+        <div class="social-links" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 25px;">
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-linkedin-in"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-dribbble"></i></a>
+        </div>
+
+        <p>&copy; 2024 Vertex Design Agency. All Rights Reserved. <br> <span style="font-size: 0.8rem;">Trademarks
+                belong to their respective owners.</span></p>
+    </footer>
+
+</body>
+
+</html>

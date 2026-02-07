@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Vertex Design</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .edit-profile-section {
+            padding-top: 150px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .edit-profile-card {
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+        }
+
+        .profile-preview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-preview img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .form-actions button {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">VERTEX</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Interactive Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">VERTEX</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span>&#9776;</span>
+        </div>
+    </nav>
+
+    <!-- Edit Profile Content -->
+    <section class="edit-profile-section">
+        <div class="glass-panel edit-profile-card">
+            <h2 class="section-title" style="margin-bottom: 30px; font-size: 2rem;">Edit Profile</h2>
+
+            <form id="edit-profile-form">
+                <div class="profile-preview">
+                    <img id="avatar-preview" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Preview">
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Profile Preview</p>
+                </div>
+
+                <!-- Avatar Presets -->
+                <div class="form-group">
+                    <label style="display: block; margin-bottom: 15px; color: var(--secondary-color);">Choose an
+                        Avatar</label>
+                    <div class="avatar-grid"
+                        style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="avatar-option"
+                            data-url="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+                        <img src="https://cdn-icons-png.flaticon.com/512/219/219969.png" class="avatar-option"
+                            data-url="https://cdn-icons-png.flaticon.com/512/219/219969.png">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" class="avatar-option"
+                            data-url="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png" class="avatar-option"
+                            data-url="https://cdn-icons-png.flaticon.com/512/4140/4140037.png">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png" class="avatar-option"
+                            data-url="https://cdn-icons-png.flaticon.com/512/4140/4140047.png">
+                    </div>
+                    <style>
+                        .avatar-option {
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            border: 3px solid transparent;
+                            transition: all 0.3s;
+                            object-fit: cover;
+                        }
+
+                        .avatar-option:hover {
+                            transform: scale(1.1);
+                        }
+
+                        .avatar-option.selected {
+                            border-color: var(--accent-color);
+                            box-shadow: 0 0 15px rgba(0, 206, 201, 0.4);
+                        }
+                    </style>
+                </div>
+
+                <div class="form-group">
+                    <label for="display-name"
+                        style="display: block; margin-bottom: 8px; color: var(--secondary-color);">Display Name</label>
+                    <input type="text" id="display-name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="photo-url"
+                        style="display: block; margin-bottom: 8px; color: var(--secondary-color);">Profile Picture
+                        URL</label>
+                    <input type="url" id="photo-url" placeholder="https://example.com/my-photo.jpg">
+                    <small style="display: block; margin-top: 5px; color: rgba(255,255,255,0.4);">Paste a direct link to
+                        an image.</small>
+                </div>
+
+                <div class="form-actions">
+                    <a href="dashboard.html" class="btn btn-outline" style="text-align: center;">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Dribbble</a>
+        </div>
+        <p>&copy; 2024 Vertex Design Agency. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/background.js"></script>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Edit Profile Logic -->
+    <script src="js/edit-profile.js"></script>
+</body>
+
+</html>

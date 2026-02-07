@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Vertex Design</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">VERTEX</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="logo">VERTEX</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span>&#9776;</span>
+        </div>
+    </nav>
+
+    <section style="flex: 1; position: relative; overflow: hidden;">
+        <!-- Floating Decorative Elements -->
+        <div
+            style="position: absolute; top: 10%; right: 10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(108,92,231,0.15), transparent); border-radius: 50%; filter: blur(60px); animation: float 6s ease-in-out infinite;">
+        </div>
+        <div
+            style="position: absolute; bottom: 20%; left: 5%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(0,206,201,0.15), transparent); border-radius: 50%; filter: blur(60px); animation: float 8s ease-in-out infinite reverse;">
+        </div>
+        <div
+            style="position: absolute; top: 50%; right: 30%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(253,121,168,0.12), transparent); border-radius: 50%; filter: blur(60px); animation: float 10s ease-in-out infinite;">
+        </div>
+
+        <div class="glass-panel hidden"
+            style="max-width: 1000px; margin: 60px auto; padding: 60px; position: relative; z-index: 2;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">We Are <span
+                        style="background: linear-gradient(to right, #6c5ce7, #00cec9); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 20px rgba(108, 92, 231, 0.3));">Visionaries</span>
+                </h1>
+                <p style="font-size: 1.2rem; color: #dfe6e9; max-width: 700px; margin: 0 auto;">
+                    Founded in 2024, Vertex Design bridges the gap between <span
+                        style="color: var(--accent-color); text-shadow: 0 0 10px rgba(0,206,201,0.5);">art and
+                        technology</span>. We don't just build
+                    websites; we craft digital ecosystems that breathe.
+                </p>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="about-stats hidden delay-100">
+                <div class="stat-item">
+                    <h2 id="counter-projects" class="counter" data-target="150">0</h2>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-item">
+                    <h2 id="counter-awards" class="counter" data-target="15">0</h2>
+                    <p>Design Awards</p>
+                </div>
+                <div class="stat-item">
+                    <h2 id="counter-satisfaction" class="counter" data-target="98">0</h2>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <h2><span id="counter-experience" class="counter" data-target="5">0</span>yr</h2>
+                    <p>Combined Exp.</p>
+                </div>
+            </div>
+
+            <hr style="border-color: var(--glass-border); margin: 50px 0;">
+
+            <!-- Mission & Vision -->
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px;">
+                <div class="glass-panel hidden delay-100" style="padding: 40px;">
+                    <h3
+                        style="background: linear-gradient(to right, #00cec9, #00b894); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 15px rgba(0,206,201,0.3)); font-size: 2rem; margin-bottom: 20px;">
+                        Our Mission</h3>
+                    <p style="color: #ccc; line-height: 1.6;">
+                        To empower brands with digital experiences that are not only visually stunning but also
+                        technically robust. We believe in design that solves problems and elevates the human experience.
+                    </p>
+                </div>
+                <div class="glass-panel hidden delay-200" style="padding: 40px;">
+                    <h3
+                        style="background: linear-gradient(to right, #6c5ce7, #a29bfe); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 15px rgba(108,92,231,0.3)); font-size: 2rem; margin-bottom: 20px;">
+                        Our Vision</h3>
+                    <p style="color: #ccc; line-height: 1.6;">
+                        To be the global benchmark for creative innovation, where art meets algorithm. We envision a
+                        future where every digital interaction is intuitive, immersive, and inspiring.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <h2 class="section-title hidden" style="font-size: 2.5rem;"><span
+                    style="background: linear-gradient(to right, #6c5ce7, #00cec9); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 20px rgba(108, 92, 231, 0.3));">Why
+                    Choose Us?</span></h2>
+            <div class="services-grid" style="margin-bottom: 60px;">
+                <div class="glass-panel service-item hidden delay-100">
+                    <i class="fas fa-rocket"
+                        style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 20px;"></i>
+                    <h3>Innovation First</h3>
+                    <p>We stay ahead of the curve, utilizing the latest frameworks and design trends to keep you
+                        relevant.</p>
+                </div>
+                <div class="glass-panel service-item hidden delay-200">
+                    <i class="fas fa-users"
+                        style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3>Client-Centric</h3>
+                    <p>Your goals are our blueprint. We collaborate closely to ensure the final product is exactly what
+                        you envisioned.</p>
+                </div>
+                <div class="glass-panel service-item hidden delay-300">
+                    <i class="fas fa-medal" style="font-size: 2.5rem; color: #ff7675; margin-bottom: 20px;"></i>
+                    <h3>Quality Assured</h3>
+                    <p>From pixel-perfect UI to bug-free code, we maintain the highest standards of quality control.</p>
+                </div>
+                <div class="glass-panel service-item hidden delay-200">
+                    <i class="fas fa-brain" style="font-size: 2.5rem; color: #00cec9; margin-bottom: 20px;"></i>
+                    <h3>Future Ready</h3>
+                    <p>We build scalable solutions designed to grow with your business and adapt to tomorrow's tech.</p>
+                </div>
+            </div>
+
+            <hr style="border-color: var(--glass-border); margin: 50px 0;">
+
+            <!-- Team Section -->
+            <h2 class="section-title hidden" style="font-size: 2.5rem;"><span
+                    style="background: linear-gradient(to right, #fd79a8, #6c5ce7); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 20px rgba(253, 121, 168, 0.3));">Meet
+                    The Minds</span></h2>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="glass-panel team-card hidden delay-100">
+                    <div class="team-avatar"
+                        style="background: url('https://i.pravatar.cc/150?img=68'); background-size: cover;"></div>
+                    <h3>Alex Rivera</h3>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 10px;">Creative Director</p>
+                    <p style="font-size: 0.9rem; color: #aaa;">Master of minimalism and typography enthusiast.</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="glass-panel team-card hidden delay-200">
+                    <div class="team-avatar"
+                        style="background: url('https://i.pravatar.cc/150?img=49'); background-size: cover;"></div>
+                    <h3>Sarah Chen</h3>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 10px;">Lead Developer</p>
+                    <p style="font-size: 0.9rem; color: #aaa;">Turns complex code into smooth user experiences.</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="glass-panel team-card hidden delay-300">
+                    <div class="team-avatar"
+                        style="background: url('https://i.pravatar.cc/150?img=11'); background-size: cover;"></div>
+                    <h3>Marcus Johnson</h3>
+                    <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 10px;">UX Strategist</p>
+                    <p style="font-size: 0.9rem; color: #aaa;">Ensures every click feels intuitive and right.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        style="text-align: center; padding: 40px 20px; color: rgba(255,255,255,0.4); font-size: 0.9rem; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.05); background: var(--bg-color);">
+
+        <!-- Social Icons -->
+        <div class="social-links" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 25px;">
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-linkedin-in"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-dribbble"></i></a>
+        </div>
+
+        <p>&copy; 2024 Vertex Design Agency. All Rights Reserved. <br> <span style="font-size: 0.8rem;">Trademarks
+                belong to their respective owners.</span></p>
+    </footer>
+
+    <script src="js/background.js"></script>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

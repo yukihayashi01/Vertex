@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Vertex Design</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">VERTEX</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="logo">VERTEX</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span>&#9776;</span>
+        </div>
+    </nav>
+
+    <section style="flex: 1; position: relative; overflow: hidden;">
+        <!-- Floating Decorative Elements -->
+        <div
+            style="position: absolute; top: 10%; right: 10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(108,92,231,0.15), transparent); border-radius: 50%; filter: blur(60px); animation: float 6s ease-in-out infinite;">
+        </div>
+        <div
+            style="position: absolute; bottom: 20%; left: 5%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(0,206,201,0.15), transparent); border-radius: 50%; filter: blur(60px); animation: float 8s ease-in-out infinite reverse;">
+        </div>
+
+        <div class="container"
+            style="max-width: 1200px; margin: 0 auto; padding-top: 50px; position: relative; z-index: 2;">
+            <h1 class="section-title hidden" style="font-size: 3.5rem; margin-bottom: 20px;">
+                <span
+                    style="background: linear-gradient(to right, #6c5ce7, #00cec9, #fd79a8); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 20px rgba(108, 92, 231, 0.3));">Selected
+                    Works</span>
+            </h1>
+            <p
+                style="text-align: center; font-size: 1.2rem; color: #dfe6e9; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Explore our portfolio of cutting-edge designs and <span
+                    style="color: var(--accent-color); text-shadow: 0 0 10px rgba(0,206,201,0.5);">digital
+                    masterpieces</span></p>
+
+            <div class="portfolio-filter hidden delay-100">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="motion">Motion</button>
+            </div>
+
+            <div class="services-grid">
+                <!-- Project 1 -->
+                <div class="project-card hidden delay-100" data-category="branding">
+                    <div class="project-img" style="background-image: linear-gradient(45deg, #111, #333);"></div>
+                    <div class="project-overlay">
+                        <h3>Neon Identity</h3>
+                        <p style="color: #aaa; margin-bottom: 10px;">Branding / Strategy</p>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">View Case
+                            Study</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card hidden delay-200" data-category="web">
+                    <div class="project-img" style="background-image: linear-gradient(45deg, #0984e3, #74b9ff);"></div>
+                    <div class="project-overlay">
+                        <h3>EcoTech App</h3>
+                        <p style="color: #aaa; margin-bottom: 10px;">UI/UX Design</p>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">View Case
+                            Study</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card hidden delay-300" data-category="motion">
+                    <div class="project-img" style="background-image: linear-gradient(45deg, #fd79a8, #e84393);"></div>
+                    <div class="project-overlay">
+                        <h3>Kinetic Flow</h3>
+                        <p style="color: #aaa; margin-bottom: 10px;">Motion Graphics</p>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">View Case
+                            Study</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card hidden" data-category="web">
+                    <div class="project-img" style="background-image: linear-gradient(45deg, #00b894, #55efc4);"></div>
+                    <div class="project-overlay">
+                        <h3>FinTech Dashboard</h3>
+                        <p style="color: #aaa; margin-bottom: 10px;">Product Design</p>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">View Case
+                            Study</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card hidden" data-category="branding">
+                    <div class="project-img" style="background-image: linear-gradient(45deg, #e17055, #fab1a0);"></div>
+                    <div class="project-overlay">
+                        <h3>Coffee Co.</h3>
+                        <p style="color: #aaa; margin-bottom: 10px;">Packaging</p>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">View Case
+                            Study</a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card hidden" data-category="motion">
+                    <div class="project-img" style="background-image: linear-gradient(45deg, #6c5ce7, #a29bfe);"></div>
+                    <div class="project-overlay">
+                        <h3>Abstract 3D</h3>
+                        <p style="color: #aaa; margin-bottom: 10px;">Visual Art</p>
+                        <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">View Case
+                            Study</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;" class="hidden">
+                <a href="contact.html" class="btn btn-outline">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        style="text-align: center; padding: 40px 20px; color: rgba(255,255,255,0.4); font-size: 0.9rem; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.05); background: var(--bg-color);">
+
+        <!-- Social Icons -->
+        <div class="social-links" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 25px;">
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-linkedin-in"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-dribbble"></i></a>
+        </div>
+
+        <p>&copy; 2024 Vertex Design Agency. All Rights Reserved. <br> <span style="font-size: 0.8rem;">Trademarks
+                belong to their respective owners.</span></p>
+    </footer>
+
+    <script src="js/background.js"></script>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

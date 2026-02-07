@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Vertex Design</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">VERTEX</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="logo">VERTEX</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span>&#9776;</span>
+        </div>
+    </nav>
+
+    <section style="flex: 1; position: relative; overflow: hidden;">
+        <!-- Floating Decorative Elements -->
+        <div
+            style="position: absolute; top: 10%; right: 10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(108,92,231,0.15), transparent); border-radius: 50%; filter: blur(60px); animation: float 6s ease-in-out infinite;">
+        </div>
+        <div
+            style="position: absolute; bottom: 20%; left: 5%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(0,206,201,0.15), transparent); border-radius: 50%; filter: blur(60px); animation: float 8s ease-in-out infinite reverse;">
+        </div>
+        <div
+            style="position: absolute; top: 40%; left: 50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(253,121,168,0.12), transparent); border-radius: 50%; filter: blur(60px); animation: float 9s ease-in-out infinite;">
+        </div>
+
+        <div class="container"
+            style="max-width: 1200px; margin: 0 auto; padding-top: 50px; position: relative; z-index: 2;">
+            <!-- Page Title -->
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">
+                    <span
+                        style="background: linear-gradient(to right, #6c5ce7, #00cec9, #fd79a8); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 20px rgba(108, 92, 231, 0.3));">Get
+                        In Touch</span>
+                </h1>
+                <p style="font-size: 1.2rem; color: #dfe6e9; max-width: 700px; margin: 0 auto;">
+                    Ready to start your next project? Let's create something <span
+                        style="color: var(--accent-color); text-shadow: 0 0 10px rgba(0,206,201,0.5);">extraordinary
+                        together</span>
+                </p>
+            </div>
+
+            <div class="contact-container">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper glass-panel hidden delay-100">
+                    <h2 style="margin-bottom: 20px; font-size: 2rem;"><span
+                            style="background: linear-gradient(to right, #6c5ce7, #00cec9); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 15px rgba(108, 92, 231, 0.3));">Send
+                            a Message</span></h2>
+                    <p style="margin-bottom: 30px; color: #ccc;">Got a project? Tell us everything.</p>
+
+                    <form>
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Email</label>
+                            <input type="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Budget</label>
+                            <input type="text" placeholder="$5k - $10k">
+                        </div>
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Message</label>
+                            <textarea rows="5" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info glass-panel hidden delay-200"
+                    style="display: flex; flex-direction: column; justify-content: center; background: rgba(108, 92, 231, 0.1);">
+                    <h2 style="margin-bottom: 30px; font-size: 2.5rem;">Let's Create <br><span
+                            style="background: linear-gradient(to right, #00cec9, #00b894); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 15px rgba(0,206,201,0.4));">Something
+                            Magic.</span></h2>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--secondary-color); margin-bottom: 5px;">Email Us</h4>
+                        <p style="font-size: 1.2rem;">hello@vertexdesign.com</p>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--secondary-color); margin-bottom: 5px;">Call Us</h4>
+                        <p style="font-size: 1.2rem;">+1 (555) 000-1234</p>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="color: var(--secondary-color); margin-bottom: 5px;">Visit Us</h4>
+                        <p style="font-size: 1.2rem;">123 Creative Blvd<br>Design District, NY 10012</p>
+                    </div>
+
+                    <div class="social-links" style="margin-top: auto;">
+                        <a href="#" style="font-size: 1.5rem; margin-right: 20px;">IN</a>
+                        <a href="#" style="font-size: 1.5rem; margin-right: 20px;">TW</a>
+                        <a href="#" style="font-size: 1.5rem;">IG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        style="text-align: center; padding: 40px 20px; color: rgba(255,255,255,0.4); font-size: 0.9rem; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.05); background: var(--bg-color);">
+
+        <!-- Social Icons -->
+        <div class="social-links" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 25px;">
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-twitter"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-linkedin-in"></i></a>
+            <a href="#" style="font-size: 1.5rem; color: rgba(255,255,255,0.6); transition: color 0.3s;"><i
+                    class="fab fa-dribbble"></i></a>
+        </div>
+
+        <p>&copy; 2024 Vertex Design Agency. All Rights Reserved. <br> <span style="font-size: 0.8rem;">Trademarks
+                belong to their respective owners.</span></p>
+    </footer>
+
+    <script src="js/background.js"></script>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
